@@ -1,0 +1,1 @@
+CreateServer returns a server which will be listened through a port by listen() function
