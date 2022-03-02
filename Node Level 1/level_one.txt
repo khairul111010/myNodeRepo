@@ -1,1 +1,2 @@
 CreateServer returns a server which will be listened through a port by listen() function
+process.exit(); Hard exits the event loop closes the program
