@@ -5,7 +5,7 @@ const routeHandler = (req, res) => {
     res.write("<html>");
     res.write("<head><title>Title</title></head>");
     res.write(
-      "<body><form action='/message' method='POST'><input type='text' name='message'><button type='submit'>SEND</button></form></body>"
+      "<body><form action='/message' method='POST'><input type='text' name='message'><button type='submit'>Submit</button></form></body>"
     );
     res.write("</html>");
     return res.end();
