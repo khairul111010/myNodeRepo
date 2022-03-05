@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Shop</a></li>
+          <li><a href="/admin/product">Add Products</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>All products</h1>
+      <% if(hasProducts) {%> <% for(let p of products) {%>
+
+      <ul>
+        <li>
+          <h1>Name: <%= p.product %></h1>
+          <h3>Price: <%= p.price %></h3>
+          <h3>Quantity: <%= p.qty %></h3>
+          <br />
+        </li>
+      </ul>
+
+      <%}%> <%} else { %>
+      <h1>No products to show</h1>
+      <% } %>
+    </main>
+  </body>
+</html>
