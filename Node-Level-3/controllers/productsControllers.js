@@ -16,11 +16,12 @@ const addProducts = (req, res, next) => {
 // shop.js
 const getAllProducts = (req, res, next) => {
   // console.log(adminRoutes.products);
-  const products = Product.fetchAll();
-  res.render("shop", {
-    pageTitle: "Shop",
-    products: products,
-    hasProducts: products.length > 0,
+  Product.fetchAll((products) => {
+    res.render("shop", {
+      pageTitle: "Shop",
+      products: products,
+      hasProducts: products.length > 0,
+    });
   });
 };
 
