@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const path = require("path");
+const { pageNotFound } = require("./controllers/404Controller");
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -18,9 +18,6 @@ app.use((req, res, next) => {
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-  //automatic take take invalid url
-  res.status(404).render("404", { pageTitle: "Page not found" });
-});
+app.use(pageNotFound);
 
 app.listen(3000);

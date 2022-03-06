@@ -1,4 +1,4 @@
-const products = [];
+const { Product } = require("../models/productModel");
 
 //admin.js
 const getProduct = (req, res, next) => {
@@ -7,17 +7,16 @@ const getProduct = (req, res, next) => {
 
 //admin.js
 const addProducts = (req, res, next) => {
-  products.push({
-    product: req.body.product,
-    price: req.body.price,
-    qty: req.body.qty,
-  });
+  const product = new Product(req.body.product, req.body.price, req.body.qty);
+  console.log(product);
+  product.save(product);
   res.redirect("/");
 };
 
 // shop.js
 const getAllProducts = (req, res, next) => {
   // console.log(adminRoutes.products);
+  const products = Product.fetchAll();
   res.render("shop", {
     pageTitle: "Shop",
     products: products,
