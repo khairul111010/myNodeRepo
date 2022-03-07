@@ -44,7 +44,7 @@ class Product {
         return cb([]);
       }
       let parsedContent = JSON.parse(content);
-      console.log(parsedContent);
+      //   console.log(parsedContent);
       return cb(parsedContent);
     });
     // return products;

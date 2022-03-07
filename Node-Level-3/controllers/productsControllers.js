@@ -2,7 +2,7 @@ const { Product } = require("../models/productModel");
 
 //admin.js
 const getProduct = (req, res, next) => {
-  res.render("add-product", { pageTitle: "Add Product" });
+  res.render("admin/add-product", { pageTitle: "Add Product" });
 };
 
 //admin.js
@@ -17,7 +17,7 @@ const addProducts = (req, res, next) => {
 const getAllProducts = (req, res, next) => {
   // console.log(adminRoutes.products);
   Product.fetchAll((products) => {
-    res.render("shop", {
+    res.render("shop/product-list", {
       pageTitle: "Shop",
       products: products,
       hasProducts: products.length > 0,
