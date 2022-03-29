@@ -2,4 +2,6 @@
 ./Node-Level-2/node_modules
 ./Node-Level-3/node_modules
 ./Node-Level-4/node_modules
-./Node-Level-5-SQL/node_modules
+./Node-Level-5/node_modules
+./Node-Level-6-Sequelize/node_modules
+
